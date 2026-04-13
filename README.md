@@ -225,8 +225,6 @@ Possible upgrades for future versions:
 
 ## Credits
 
-Developed as a browser-based English learning interface for vocabulary practice, pronunciation support, progress tracking, and study resources.
+Developed as a words English learning interface for vocabulary practice, pronunciation support, progress tracking, and study resources.
 
 ## License
-
-Add your preferred license here if the project will be shared publicly.
