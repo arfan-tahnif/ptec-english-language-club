@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="color-scheme" content="light dark" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PTEC VocabMaster – English Language Club</title>
@@ -183,6 +184,313 @@
       transition: box-shadow 0.2s, transform 0.2s !important;
     }
 
+
+    .search-panel {
+      padding: 1.5rem 1.25rem;
+      margin-bottom: 0;
+    }
+    .search-panel-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      align-items: stretch;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 14rem;
+      padding: 0.9rem 1rem;
+      border-radius: 0.9rem;
+      border: 1px solid hsl(40,20%,88%);
+      font-size: 0.95rem;
+      background: white;
+      color: hsl(220,30%,15%);
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: hsl(230,100%,25%);
+      box-shadow: 0 0 0 3px hsl(230 100% 25% / 0.12);
+    }
+    .search-status {
+      font-size: 0.78rem;
+      color: hsl(220,15%,50%);
+      margin: 0.85rem 0 0;
+      line-height: 1.55;
+    }
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+    .resource-card {
+      border: 1px solid hsl(40,20%,88%);
+      border-radius: 1rem;
+      background: white;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .resource-pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: hsl(230,100%,25%);
+      background: hsl(45,90%,55%,0.14);
+      padding: 0.38rem 0.65rem;
+      border-radius: 9999px;
+    }
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      width: fit-content;
+      text-decoration: none;
+      background: hsl(230,100%,25%);
+      color: hsl(45,100%,95%);
+      padding: 0.72rem 1rem;
+      border-radius: 0.85rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    .level-test-card {
+      border: 1px solid hsl(40,20%,88%);
+      border-radius: 1rem;
+      background: white;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .level-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 0.95rem;
+      border-radius: 0.9rem;
+      border: 1px solid hsl(40,20%,88%);
+      background: hsl(40,30%,98%);
+      cursor: pointer;
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+    .level-option:hover {
+      border-color: hsl(230,100%,25%,0.35);
+      transform: translateY(-1px);
+    }
+    .level-option.selected {
+      border-color: hsl(230,100%,25%);
+      background: hsl(230,100%,25%,0.06);
+    }
+    .level-option input {
+      margin-top: 0.18rem;
+      accent-color: hsl(230,100%,25%);
+      flex-shrink: 0;
+    }
+    .level-submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      border-radius: 0.95rem;
+      background: hsl(230,100%,25%);
+      color: hsl(45,100%,95%);
+      padding: 0.9rem 1.1rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .level-result-box {
+      border: 1px solid hsl(40,20%,88%);
+      border-radius: 1rem;
+      background: linear-gradient(135deg, hsl(45,100%,97%), white);
+      padding: 1rem 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .level-result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 9999px;
+      background: hsl(45,90%,55%,0.16);
+      color: hsl(230,100%,25%);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .theme-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+    }
+    .search-status.is-error {
+      color: hsl(0,72%,56%) !important;
+      font-weight: 600;
+    }
+    .search-input.is-error {
+      border-color: hsl(0,72%,56%) !important;
+      color: hsl(0,72%,56%) !important;
+      box-shadow: 0 0 0 3px hsla(0,72%,56%,0.12);
+    }
+    .pronounce-active {
+      background: hsl(45,90%,55%) !important;
+      color: hsl(230,100%,15%) !important;
+      border-color: hsl(45,90%,55%) !important;
+      box-shadow: 0 8px 18px -10px hsla(45,90%,55%,0.9);
+    }
+
+    body.dark-theme {
+      background: hsl(222,28%,12%);
+      color: hsl(45,100%,95%);
+    }
+    body.dark-theme .sticky-header {
+      background: rgba(15, 23, 42, 0.92) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme .word-card,
+    body.dark-theme .resource-card,
+    body.dark-theme .fb-preview-card {
+      background: hsl(222,24%,16%) !important;
+      box-shadow: 0 10px 34px -6px rgba(0,0,0,0.35);
+    }
+    body.dark-theme .category-chip,
+    body.dark-theme .mode-btn,
+    body.dark-theme .icon-btn,
+    body.dark-theme .quiz-option {
+      background: hsl(222,20%,22%) !important;
+      color: hsl(45,100%,95%) !important;
+      border-color: rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme .mode-btn.active,
+    body.dark-theme .category-chip.active {
+      background: hsl(45,90%,55%) !important;
+      color: hsl(230,100%,15%) !important;
+      border-color: hsl(45,90%,55%) !important;
+    }
+    body.dark-theme .search-input {
+      background: hsl(222,20%,20%);
+      color: hsl(45,100%,95%);
+      border-color: rgba(255,255,255,0.1);
+    }
+    body.dark-theme .resource-link {
+      background: hsl(45,90%,55%);
+      color: hsl(230,100%,12%);
+      border: 1px solid hsl(45,90%,60%);
+    }
+    body.dark-theme .resource-pill {
+      color: hsl(230,100%,12%);
+      background: hsl(45,95%,68%);
+      box-shadow: 0 6px 16px -12px hsla(45,95%,68%,0.95);
+    }
+    body.dark-theme footer {
+      background: hsl(222,30%,10%) !important;
+      border-top-color: rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme [style*="color:hsl(220,30%,15%)"] {
+      color: hsl(45,100%,95%) !important;
+    }
+    body.dark-theme [style*="color:hsl(220,15%,50%)"] {
+      color: hsl(220,15%,75%) !important;
+    }
+    body.dark-theme [style*="color:hsl(220,30%,15%,0.8)"] {
+      color: rgba(248,250,252,0.86) !important;
+    }
+    body.dark-theme [style*="color:hsl(220,30%,15%,0.7)"] {
+      color: rgba(248,250,252,0.74) !important;
+    }
+    body.dark-theme [style*="color:hsl(230,100%,25%)"],
+    body.dark-theme [style*="color:hsl(230,100%,30%)"],
+    body.dark-theme [style*="color:hsl(230,100%,35%)"],
+    body.dark-theme [style*="color:hsl(220,90%,50%)"] {
+      color: hsl(210,100%,78%) !important;
+    }
+    body.dark-theme [style*="border-left:3px solid hsl(230,100%,25%)"] {
+      border-left-color: hsl(210,100%,78%) !important;
+    }
+    body.dark-theme [style*="border:1px solid hsl(230,100%,25%,0.25)"] {
+      border-color: hsla(210,100%,78%,0.45) !important;
+    }
+    body.dark-theme [style*="background:hsl(40,20%,93%)"] {
+      background: hsl(222,20%,20%) !important;
+    }
+    body.dark-theme [style*="background:white"] {
+      background: hsl(222,24%,16%) !important;
+    }
+    body.dark-theme [style*="border:2px solid hsl(40,20%,90%)"] {
+      border-color: rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme [style*="border:1px solid hsl(40,20%,88%)"] {
+      border-color: rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme [style*="background:hsl(40,20%,98%)"],
+    body.dark-theme [style*="background:hsl(40,25%,95%)"],
+    body.dark-theme [style*="background:hsl(40,30%,97%)"],
+    body.dark-theme [style*="background:rgba(255,255,255,0.85)"],
+    body.dark-theme [style*="background:rgba(255,255,255,0.92)"] {
+      background: hsl(222,20%,18%) !important;
+    }
+    body.dark-theme [style*="border:2px solid hsl(40,20%,88%)"] {
+      border-color: rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme [style*="border:1px solid hsl(230,100%,25%,0.25)"] {
+      border-color: rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme [style*="color:hsl(230,100%,25%)"] {
+      color: hsl(45,90%,65%) !important;
+    }
+    body.dark-theme #ourStorySection {
+      background: hsl(222,20%,18%) !important;
+      border-top-color: rgba(255,255,255,0.08) !important;
+      border-bottom-color: rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme #ourStorySection [style*="background:hsl(40,20%,85%)"] {
+      background: rgba(255,255,255,0.12) !important;
+    }
+    body.dark-theme #ourStorySection [style*="background:hsl(230,100%,25%)"] {
+      background: hsl(45,90%,55%) !important;
+      color: hsl(230,100%,15%) !important;
+      box-shadow: 0 8px 22px -12px rgba(0,0,0,0.45) !important;
+    }
+    body.dark-theme #ourStorySection [style*="color:hsl(220,30%,15%,0.75)"] {
+      color: rgba(248,250,252,0.78) !important;
+    }
+    body.dark-theme #ourStorySection [style*="border-top:1px solid hsl(40,20%,92%)"] {
+      border-top-color: rgba(255,255,255,0.08) !important;
+    }
+    body.dark-theme .level-test-card,
+    body.dark-theme .level-result-box {
+      background: hsl(222,24%,16%) !important;
+      border-color: rgba(255,255,255,0.08) !important;
+      color: hsl(45,100%,95%) !important;
+    }
+    body.dark-theme .level-option {
+      background: hsl(222,20%,20%) !important;
+      border-color: rgba(255,255,255,0.08) !important;
+      color: hsl(45,100%,95%) !important;
+    }
+    body.dark-theme .level-option.selected {
+      background: rgba(250,204,21,0.12) !important;
+      border-color: hsl(45,90%,55%) !important;
+    }
+    body.dark-theme .level-result-badge {
+      background: rgba(250,204,21,0.16) !important;
+      color: hsl(45,90%,65%) !important;
+    }
+    body.dark-theme .level-submit-btn {
+      background: hsl(45,90%,55%) !important;
+      color: hsl(230,100%,15%) !important;
+    }
+
     /* About view */
     #view-about { display: none; }
 
@@ -227,7 +535,12 @@
         <span style="font-size:0.625rem;text-transform:uppercase;letter-spacing:0.2em;color:hsl(220,15%,50%);">English Language Club</span>
       </div>
     </div>
-    <span id="wordCountLabel" style="font-size:0.75rem;color:hsl(220,15%,50%);display:none;"></span>
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <button class="icon-btn theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span id="themeToggleIcon" aria-hidden="true">🌙</span>
+      </button>
+      <span id="wordCountLabel" style="font-size:0.75rem;color:hsl(220,15%,50%);display:none;"></span>
+    </div>
   </div>
 </header>
 
@@ -252,6 +565,14 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
       Progress
     </button>
+    <button class="mode-btn" id="btn-level" onclick="openLevelTestSection()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Level Test
+    </button>
+    <button class="mode-btn" id="btn-resource" onclick="openResourceSection()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Resource
+    </button>
     <button class="mode-btn" id="btn-about" onclick="setMode('about')">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       About
@@ -260,6 +581,34 @@
 
   <!-- ===== BROWSE VIEW ===== -->
   <div id="view-browse">
+    <section style="max-width:36rem;margin:0 auto 1.5rem;">
+      <div class="word-card search-panel">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+          <div>
+            <p style="font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:hsl(230,100%,25%);margin:0 0 0.4rem;">Audio Pronunciation</p>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:hsl(220,30%,15%);margin:0 0 0.5rem;">Search &amp; Pronounce</h2>
+            <p style="max-width:40rem;margin:0;color:hsl(220,15%,50%);">Search any word instantly and use the pronunciation button to hear the exact word or your own text.</p>
+          </div>
+        </div>
+        <div class="search-panel-actions">
+          <input id="searchInput" class="search-input" type="text" placeholder="Search word, meaning, example, or category" oninput="handleSearchInput(event)" onkeydown="handleSearchEnter(event)" />
+          <button id="searchSubmitBtn" class="mode-btn active" type="button" onclick="searchFromInput()" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            Search
+          </button>
+          <button id="searchPronounceBtn" class="mode-btn" type="button" onclick="pronounceSearchInput()" aria-label="Pronounce">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+            <span>/ə/</span>
+            Pronounce
+          </button>
+          <button id="searchClearBtn" class="mode-btn" type="button" onclick="clearSearch()" aria-label="Clear search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+            Clear
+          </button>
+        </div>
+        <p id="searchStatus" class="search-status">Browse the full collection or search for a word, meaning, example, or category.</p>
+      </div>
+    </section>
     <!-- Hero Word Card -->
     <section style="max-width:36rem;margin:0 auto 2.5rem;">
       <div style="position:relative;">
@@ -323,6 +672,33 @@
         <span id="wordListCount" style="font-size:0.875rem;font-weight:400;font-family:'Inter',sans-serif;color:hsl(220,15%,50%);margin-left:0.5rem;"></span>
       </h2>
       <div id="wordList" style="max-width:36rem;display:flex;flex-direction:column;gap:0.75rem;"></div>
+    </section>
+  </div>
+
+    <section id="levelTestSection" style="display:none;">
+      <div class="word-card" style="padding:1.5rem;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.25rem;">
+          <div>
+            <p style="font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:hsl(230,100%,25%);margin:0 0 0.4rem;">English Level Check</p>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:hsl(220,30%,15%);margin:0 0 0.5rem;">Test Your English Level</h2>
+            <p style="max-width:42rem;margin:0;color:hsl(220,15%,50%);">Answer the quick questions below to get an estimated level from Beginner to Advanced.</p>
+          </div>
+        </div>
+        <div id="levelTestContent"></div>
+      </div>
+    </section>
+
+    <section id="resourceSection" class="resource-section">
+      <div class="word-card" style="padding:1.5rem;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:0.25rem;">
+          <div>
+            <p style="font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:hsl(230,100%,25%);margin:0 0 0.4rem;">Resource Corner</p>
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:hsl(220,30%,15%);margin:0 0 0.5rem;">English Learning PDFs</h2>
+            <p style="max-width:42rem;margin:0;color:hsl(220,15%,50%);">Explore helpful PDF resources for grammar, vocabulary, pronunciation, and writing practice.</p>
+          </div>
+        </div>
+        <div id="resourceGrid" class="resource-grid"></div>
+      </div>
     </section>
   </div>
 
@@ -1008,7 +1384,27 @@ const categories = ["All Words","IELTS Essentials","Academic Writing","Common Id
 //  STATE
 // ==========================================
 const STORAGE_KEY = "ptec-progress";
+const THEME_KEY = "ptec-theme";
 const defaultProgress = { learnedWordIds:[], savedWordIds:[], quizzesTaken:0, totalCorrect:0, totalAnswered:0, mistakes:[] };
+const resourcePdfs = [
+  { title: "English Grammar Essentials", level: "Starter", note: "A useful starter resource for building grammar fundamentals.", url: "#" },
+  { title: "Vocabulary Builder Workbook", level: "Intermediate", note: "Ideal for word practice, revision, and classroom exercises.", url: "#" },
+  { title: "Pronunciation Practice Notes", level: "Speaking", note: "Keep IPA guides, speaking drills, and accent exercises here.", url: "#" },
+  { title: "Writing Support Pack", level: "Academic", note: "Useful for paragraph writing, essay structure, and sentence building.", url: "#" }
+];
+
+const englishLevelQuestions = [
+  { prompt: "Choose the correct sentence.", skill: "Grammar", options: ["She go to school every day.", "She goes to school every day.", "She going to school every day.", "She gone to school every day."], answer: 1 },
+  { prompt: "Which word is closest in meaning to \"rapid\"?", skill: "Vocabulary", options: ["Slow", "Quick", "Quiet", "Rare"], answer: 1 },
+  { prompt: "Complete the sentence: If I ___ more time, I would learn Spanish.", skill: "Grammar", options: ["have", "had", "will have", "am having"], answer: 1 },
+  { prompt: "Which sentence sounds the most natural in formal English?", skill: "Usage", options: ["I wanna know your plan.", "I want know your plan.", "I would like to know your plan.", "I liking to know your plan."], answer: 2 },
+  { prompt: "Choose the best connector: I was tired, ___ I finished the report.", skill: "Grammar", options: ["but", "because", "although", "unless"], answer: 0 },
+  { prompt: "What does \"beneficial\" mean?", skill: "Vocabulary", options: ["Harmful", "Useful", "Expensive", "Unclear"], answer: 1 },
+  { prompt: "Choose the correct sentence.", skill: "Accuracy", options: ["He has been working here since 2020.", "He is working here since 2020.", "He works here since 2020.", "He has working here since 2020."], answer: 0 },
+  { prompt: "Which sentence is best for expressing an opinion politely?", skill: "Speaking", options: ["You are wrong.", "I don't think that is correct.", "No, impossible.", "That makes no sense."], answer: 1 },
+  { prompt: "Choose the best word to complete the sentence: The lecture was so ___ that everyone stayed focused.", skill: "Vocabulary", options: ["engaging", "engage", "engagedly", "engages"], answer: 0 },
+  { prompt: "Which sentence shows advanced control of English?", skill: "Reading & Writing", options: ["The problem is big.", "The problem is very bad.", "The issue is complex and requires a long-term solution.", "The issue have many problem."], answer: 2 }
+];
 
 function loadProgress() {
   try { const r = localStorage.getItem(STORAGE_KEY); return r ? {...defaultProgress,...JSON.parse(r)} : {...defaultProgress}; }
@@ -1020,8 +1416,10 @@ let progress = loadProgress();
 let currentMode = "browse";
 let activeCategory = "All Words";
 let heroIndex = 0;
-let heroWords = words; // filtered by category
+let heroWords = words; // words currently shown in the hero/list area
 let wordListPage = 1;
+let searchQuery = "";
+let searchState = null;
 const WORDS_PER_PAGE = 10;
 
 // ==========================================
@@ -1059,9 +1457,30 @@ function svgVolume(size=14) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
 }
 
-function pronounce(text) {
-  if (!('speechSynthesis' in window)) return;
+function setSearchPronounceActive(isActive) {
+  const btn = document.getElementById("searchPronounceBtn");
+  if (!btn) return;
+  btn.classList.toggle("pronounce-active", !!isActive);
+}
+
+function setSearchErrorState(message) {
+  const status = document.getElementById("searchStatus");
+  const input = document.getElementById("searchInput");
+  const hasError = !!message;
+  if (status) {
+    if (message) status.textContent = message;
+    status.classList.toggle("is-error", hasError);
+  }
+  if (input) input.classList.toggle("is-error", hasError);
+}
+
+function pronounce(text, sourceButtonId = null) {
+  if (!('speechSynthesis' in window)) {
+    if (sourceButtonId === "searchPronounceBtn") setSearchPronounceActive(false);
+    return;
+  }
   speechSynthesis.cancel();
+  if (sourceButtonId === "searchPronounceBtn") setSearchPronounceActive(true);
 
   function _speak() {
     const u = new SpeechSynthesisUtterance(text);
@@ -1077,6 +1496,12 @@ function pronounce(text) {
                     voices.find(v => v.lang.startsWith('en')) ||
                     null;
     if (enVoice) u.voice = enVoice;
+    u.onend = () => {
+      if (sourceButtonId === "searchPronounceBtn") setSearchPronounceActive(false);
+    };
+    u.onerror = () => {
+      if (sourceButtonId === "searchPronounceBtn") setSearchPronounceActive(false);
+    };
 
     speechSynthesis.speak(u);
 
@@ -1095,6 +1520,9 @@ function pronounce(text) {
     // Fallback if onvoiceschanged never fires (some browsers)
     setTimeout(_speak, 400);
   }
+  if (sourceButtonId === "searchPronounceBtn") {
+    setTimeout(() => setSearchPronounceActive(false), 4000);
+  }
 }
 
 function pronounceById(id) {
@@ -1102,15 +1530,327 @@ function pronounceById(id) {
   if (w) pronounce(w.word);
 }
 
+function normText(value) {
+  return String(value || "").toLowerCase().trim();
+}
+
+function getBasePool() {
+  return activeCategory === "All Words" ? words : words.filter(w => w.category === activeCategory);
+}
+
+function getSearchableText(word) {
+  return [word.word, word.phonetic, word.partOfSpeech, word.definition, word.example, word.category]
+    .map(value => normText(value))
+    .join(" ");
+}
+
+function getSearchTerms(query) {
+  return normText(query).split(/\s+/).filter(Boolean);
+}
+
+function getSearchState() {
+  const pool = getBasePool();
+  const rawQuery = searchQuery.trim();
+  const query = normText(rawQuery);
+
+  if (!query) {
+    return {
+      query: rawQuery,
+      displayWords: pool,
+      matchedWords: pool,
+      resultCount: pool.length,
+      hasQuery: false,
+      hasError: false,
+      missingTerm: ""
+    };
+  }
+
+  const terms = getSearchTerms(query);
+  const searchablePool = pool.map(word => ({ word, text: getSearchableText(word) }));
+  const missingTerm = terms.find(term => !searchablePool.some(entry => entry.text.includes(term))) || "";
+
+  if (missingTerm) {
+    return {
+      query: rawQuery,
+      displayWords: pool,
+      matchedWords: [],
+      resultCount: 0,
+      hasQuery: true,
+      hasError: true,
+      missingTerm
+    };
+  }
+
+  const matchedEntries = searchablePool.filter(entry => terms.every(term => entry.text.includes(term)));
+  const matchedWords = matchedEntries.map(entry => entry.word);
+
+  if (matchedWords.length === 0) {
+    return {
+      query: rawQuery,
+      displayWords: pool,
+      matchedWords: [],
+      resultCount: 0,
+      hasQuery: true,
+      hasError: true,
+      missingTerm: rawQuery
+    };
+  }
+
+  return {
+    query: rawQuery,
+    displayWords: matchedWords,
+    matchedWords,
+    resultCount: matchedWords.length,
+    hasQuery: true,
+    hasError: false,
+    missingTerm: ""
+  };
+}
+
+function loadTheme() {
+  try {
+    const theme = localStorage.getItem(THEME_KEY);
+    return theme === "dark" ? "dark" : "light";
+  } catch {
+    return "light";
+  }
+}
+
+function saveTheme(theme) {
+  try { localStorage.setItem(THEME_KEY, theme); } catch {}
+}
+
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.classList.toggle("dark-theme", isDark);
+  document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+  const icon = document.getElementById("themeToggleIcon");
+  const toggle = document.getElementById("themeToggle");
+  if (icon) icon.textContent = isDark ? "☀️" : "🌙";
+  if (toggle) {
+    toggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+    toggle.setAttribute("aria-label", toggle.title);
+  }
+}
+
+function toggleTheme() {
+  const nextTheme = document.body.classList.contains("dark-theme") ? "light" : "dark";
+  applyTheme(nextTheme);
+  saveTheme(nextTheme);
+}
+
+function handleSearchInput(event) {
+  searchQuery = event.target.value || "";
+  renderBrowse();
+}
+
+function handleSearchEnter(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchFromInput();
+  }
+}
+
+function searchFromInput() {
+  const input = document.getElementById("searchInput");
+  searchQuery = input ? input.value.trim() : searchQuery;
+  renderBrowse();
+}
+
+function clearSearch() {
+  searchQuery = "";
+  const input = document.getElementById("searchInput");
+  if (input) {
+    input.value = "";
+    input.focus();
+  }
+  setSearchErrorState("");
+  renderBrowse();
+}
+
+function pronounceSearchInput() {
+  const input = document.getElementById("searchInput");
+  const value = input ? input.value.trim() : "";
+  if (!value) {
+    const current = heroWords[heroIndex];
+    if (current) pronounce(current.word, "searchPronounceBtn");
+    return;
+  }
+  const exactWord = words.find(item => normText(item.word) === normText(value));
+  pronounce(exactWord ? exactWord.word : value, "searchPronounceBtn");
+}
+
+function updateSearchStatus(state = searchState) {
+  const status = document.getElementById("searchStatus");
+  const input = document.getElementById("searchInput");
+  if (input && input.value !== searchQuery) input.value = searchQuery;
+  if (!status) return;
+
+  if (!state || !state.hasQuery) {
+    status.textContent = "Browse the full collection or search for a word, meaning, example, or category.";
+    setSearchErrorState("");
+    return;
+  }
+
+  if (!state.hasError) {
+    status.textContent = `Showing ${state.resultCount} result${state.resultCount === 1 ? "" : "s"} for “${state.query}”.`;
+    setSearchErrorState("");
+    return;
+  }
+
+  const failedWord = state.missingTerm || state.query;
+  setSearchErrorState(`No result found for "${failedWord}". Try another spelling or clear the search.`);
+}
+
+function renderResourceSection() {
+  const grid = document.getElementById("resourceGrid");
+  if (!grid) return;
+  grid.innerHTML = resourcePdfs.map(item => {
+    const safeTitle = escHtml(item.title);
+    const safeLevel = escHtml(item.level);
+    const safeNote = escHtml(item.note);
+    const safeUrl = item.url || "#";
+    const linkAttrs = safeUrl === "#"
+      ? `href="#" onclick="event.preventDefault();alert('Edit the resourcePdfs array in the HTML file and replace # with your PDF link.');"`
+      : `href="${safeUrl}" target="_blank" rel="noopener noreferrer"`;
+    return `
+      <div class="resource-card">
+        <span class="resource-pill">${safeLevel}</span>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:hsl(220,30%,15%);margin:0 0 0.4rem;">${safeTitle}</h3>
+          <p style="font-size:0.84rem;line-height:1.6;color:hsl(220,15%,50%);margin:0;">${safeNote}</p>
+        </div>
+        <a class="resource-link" ${linkAttrs}>Open PDF</a>
+      </div>`;
+  }).join("");
+}
+
+function getEnglishLevelBand(score, total) {
+  const ratio = total ? score / total : 0;
+  if (ratio >= 0.9) return { level: "Advanced", cefr: "C1-C2", note: "You show strong control of grammar, vocabulary, and formal sentence structure." };
+  if (ratio >= 0.75) return { level: "Upper-Intermediate", cefr: "B2", note: "You communicate confidently in most academic and professional situations." };
+  if (ratio >= 0.55) return { level: "Intermediate", cefr: "B1", note: "You handle everyday English well and can continue building fluency and accuracy." };
+  if (ratio >= 0.35) return { level: "Elementary", cefr: "A2", note: "You understand simple English and can improve by practicing basic grammar and vocabulary." };
+  return { level: "Beginner", cefr: "A1", note: "Start with foundational vocabulary, simple sentence patterns, and daily reading practice." };
+}
+
+function renderLevelTestSection() {
+  const container = document.getElementById("levelTestContent");
+  if (!container) return;
+  container.innerHTML = `
+    <div id="levelTestResult"></div>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      ${englishLevelQuestions.map((q, idx) => `
+        <div class="level-test-card" id="level-card-${idx}">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap;">
+            <h3 style="margin:0;font-size:1rem;color:hsl(220,30%,15%);">${idx + 1}. ${escHtml(q.prompt)}</h3>
+            <span class="resource-pill">${escHtml(q.skill)}</span>
+          </div>
+          <div style="display:grid;gap:0.65rem;">
+            ${q.options.map((option, optIdx) => `
+              <label class="level-option">
+                <input type="radio" name="level-q-${idx}" value="${optIdx}" onchange="highlightLevelOption(this)" />
+                <span>${escHtml(option)}</span>
+              </label>
+            `).join("")}
+          </div>
+        </div>
+      `).join("")}
+    </div>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1rem;">
+      <button class="level-submit-btn" onclick="submitEnglishLevelTest()">Check My English Level</button>
+      <button class="mode-btn" type="button" onclick="renderLevelTestSection()">Reset Answers</button>
+    </div>
+  `;
+}
+
+function highlightLevelOption(input) {
+  if (!input || !input.name) return;
+  document.querySelectorAll(`input[name="${input.name}"]`).forEach(el => {
+    const label = el.closest(".level-option");
+    if (label) label.classList.toggle("selected", el.checked);
+  });
+}
+
+function submitEnglishLevelTest() {
+  const unanswered = [];
+  let score = 0;
+  englishLevelQuestions.forEach((q, idx) => {
+    const selected = document.querySelector(`input[name="level-q-${idx}"]:checked`);
+    const card = document.getElementById(`level-card-${idx}`);
+    if (card) card.style.borderColor = "hsl(40,20%,88%)";
+    if (!selected) {
+      unanswered.push(idx + 1);
+      if (card) card.style.borderColor = "hsl(0,72%,56%)";
+      return;
+    }
+    if (Number(selected.value) === q.answer) score += 1;
+  });
+
+  const resultEl = document.getElementById("levelTestResult");
+  if (!resultEl) return;
+
+  if (unanswered.length) {
+    resultEl.innerHTML = `
+      <div class="level-result-box">
+        <p style="margin:0;font-size:0.92rem;color:hsl(0,72%,56%);font-weight:700;">Please answer all questions first.</p>
+        <p style="margin:0.45rem 0 0;color:hsl(220,15%,50%);">Unanswered questions: ${unanswered.join(", ")}</p>
+      </div>
+    `;
+    resultEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    return;
+  }
+
+  const band = getEnglishLevelBand(score, englishLevelQuestions.length);
+  const percentage = Math.round((score / englishLevelQuestions.length) * 100);
+  resultEl.innerHTML = `
+    <div class="level-result-box animate-fade-up">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.85rem;flex-wrap:wrap;">
+        <div>
+          <span class="level-result-badge">${escHtml(band.cefr)} · ${escHtml(band.level)}</span>
+          <h3 style="margin:0.75rem 0 0.35rem;font-size:1.35rem;color:hsl(220,30%,15%);">Estimated English Level: ${escHtml(band.level)}</h3>
+          <p style="margin:0;color:hsl(220,15%,50%);line-height:1.65;max-width:42rem;">${escHtml(band.note)}</p>
+        </div>
+        <div style="min-width:9rem;padding:0.9rem 1rem;border-radius:0.9rem;background:hsl(45,90%,55%,0.12);text-align:center;">
+          <div style="font-size:1.5rem;font-weight:800;color:hsl(220,30%,15%);">${score}/${englishLevelQuestions.length}</div>
+          <div style="font-size:0.78rem;color:hsl(220,15%,50%);">${percentage}% correct</div>
+        </div>
+      </div>
+    </div>
+  `;
+  resultEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
 // ==========================================
 //  MODE SWITCHING
 // ==========================================
+function replayRevealAnimation(el, animationClass = "animate-fade-up") {
+  if (!el) return;
+  el.classList.remove(animationClass);
+  void el.offsetWidth;
+  el.classList.add(animationClass);
+}
+
 function setMode(mode) {
   currentMode = mode;
   ["browse","saved","quiz","progress","about"].forEach(m => {
     document.getElementById("view-"+m).style.display = m===mode ? "block" : "none";
     document.getElementById("btn-"+m).className = "mode-btn" + (m===mode ? " active" : "");
   });
+  const resourceBtn = document.getElementById("btn-resource");
+  if (resourceBtn) resourceBtn.className = "mode-btn";
+  const levelBtn = document.getElementById("btn-level");
+  if (levelBtn) levelBtn.className = "mode-btn";
+  const resourceSection = document.getElementById("resourceSection");
+  if (resourceSection) {
+    resourceSection.classList.remove("is-visible");
+    resourceSection.style.display = "none";
+  }
+  const levelSection = document.getElementById("levelTestSection");
+  if (levelSection) {
+    levelSection.classList.remove("is-visible");
+    levelSection.style.display = "none";
+  }
   // Show Our Story in Browse AND About
   const storyEl = document.getElementById('ourStorySection');
   if (storyEl) storyEl.style.display = (mode === 'browse' || mode === 'about') ? 'block' : 'none';
@@ -1118,24 +1858,92 @@ function setMode(mode) {
   else if (mode==="saved") renderSaved();
   else if (mode==="quiz") startQuiz();
   else if (mode==="progress") renderProgress();
+
+  if (mode === "saved" || mode === "quiz" || mode === "progress") {
+    replayRevealAnimation(document.getElementById("view-" + mode));
+  } else if (mode === "about") {
+    replayRevealAnimation(storyEl);
+  }
   // About: Our Story section already shown above; nothing else to render
+}
+
+function openResourceSection() {
+  currentMode = "resource";
+  ["browse","saved","quiz","progress","about"].forEach(m => {
+    document.getElementById("view-"+m).style.display = "none";
+    document.getElementById("btn-"+m).className = "mode-btn";
+  });
+  const storyEl = document.getElementById('ourStorySection');
+  if (storyEl) storyEl.style.display = 'none';
+  const levelBtn = document.getElementById("btn-level");
+  if (levelBtn) levelBtn.className = "mode-btn";
+  const levelSection = document.getElementById("levelTestSection");
+  if (levelSection) {
+    levelSection.classList.remove("is-visible");
+    levelSection.style.display = "none";
+  }
+  const resourceBtn = document.getElementById("btn-resource");
+  if (resourceBtn) resourceBtn.className = "mode-btn active";
+  const target = document.getElementById("resourceSection");
+  if (target) {
+    renderResourceSection();
+    target.style.display = "block";
+    target.classList.remove("is-visible");
+    void target.offsetWidth;
+    target.classList.add("is-visible");
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+}
+
+function openLevelTestSection() {
+  currentMode = "level";
+  ["browse","saved","quiz","progress","about"].forEach(m => {
+    document.getElementById("view-"+m).style.display = "none";
+    document.getElementById("btn-"+m).className = "mode-btn";
+  });
+  const storyEl = document.getElementById('ourStorySection');
+  if (storyEl) storyEl.style.display = 'none';
+  const resourceBtn = document.getElementById("btn-resource");
+  if (resourceBtn) resourceBtn.className = "mode-btn";
+  const resourceSection = document.getElementById("resourceSection");
+  if (resourceSection) {
+    resourceSection.classList.remove("is-visible");
+    resourceSection.style.display = "none";
+  }
+  const levelBtn = document.getElementById("btn-level");
+  if (levelBtn) levelBtn.className = "mode-btn active";
+  const target = document.getElementById("levelTestSection");
+  if (target) {
+    renderLevelTestSection();
+    target.style.display = "block";
+    replayRevealAnimation(target);
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 }
 
 // ==========================================
 //  BROWSE
 // ==========================================
 function getFilteredWords() {
-  if (activeCategory === "All Words") return words;
-  return words.filter(w => w.category === activeCategory);
+  const state = searchState || getSearchState();
+  return state.displayWords;
 }
 
 function renderBrowse() {
-  heroWords = getFilteredWords().length > 0 ? getFilteredWords() : words;
-  if (heroIndex >= heroWords.length) heroIndex = 0;
+  searchState = getSearchState();
+  heroWords = searchState.displayWords;
+  if (heroWords.length === 0) heroIndex = 0;
+  else if (heroIndex >= heroWords.length) heroIndex = 0;
   updateHeroCard();
   renderCategoryNav();
   wordListPage = 1;
   renderWordList();
+  updateSearchStatus(searchState);
+  renderResourceSection();
   // desktop arrows
   const md = window.innerWidth >= 768;
   document.getElementById("heroLeft").style.display = md ? "flex" : "none";
@@ -1148,12 +1956,23 @@ function renderBrowse() {
 
 function updateHeroCard(animDir=0) {
   const w = heroWords[heroIndex];
-  if (!w) return;
   const card = document.getElementById("heroCard");
+  if (!w) {
+    document.getElementById("heroWord").textContent = "No word available";
+    document.getElementById("heroPhonetic").textContent = "";
+    document.getElementById("heroPos").textContent = "";
+    document.getElementById("heroDef").textContent = "";
+    document.getElementById("heroExample").textContent = "";
+    document.getElementById("heroCounter").textContent = "0 / " + words.length;
+    const saveBtn = document.getElementById("heroSave");
+    saveBtn.innerHTML = svgHeart(false, 16);
+    saveBtn.style.color = "";
+    document.getElementById("heroDots").innerHTML = "";
+    return;
+  }
 
-  // Animate
   card.style.animation = "none";
-  card.offsetHeight; // reflow
+  card.offsetHeight;
   if (animDir > 0) card.style.animation = "slideInRight 0.3s ease both";
   else if (animDir < 0) card.style.animation = "slideInLeft 0.3s ease both";
 
@@ -1162,16 +1981,15 @@ function updateHeroCard(animDir=0) {
   document.getElementById("heroPos").textContent = w.partOfSpeech;
   document.getElementById("heroDef").textContent = w.definition;
   document.getElementById("heroExample").textContent = "\"" + w.example + "\"";
-  document.getElementById("heroCounter").textContent = (heroIndex+1) + " / " + heroWords.length;
+  const absolutePosition = Math.max(1, words.findIndex(item => item.id === w.id) + 1);
+  document.getElementById("heroCounter").textContent = absolutePosition + " / " + words.length;
 
-  // Save button state
   const saved = progress.savedWordIds.includes(w.id);
   const saveBtn = document.getElementById("heroSave");
   saveBtn.innerHTML = svgHeart(saved, 16);
   if (saved) saveBtn.style.color = "hsl(0,84%,60%)";
   else saveBtn.style.color = "";
 
-  // Progress dots (max 8)
   const dotsContainer = document.getElementById("heroDots");
   const maxDots = Math.min(heroWords.length, 8);
   dotsContainer.innerHTML = "";
@@ -1184,6 +2002,7 @@ function updateHeroCard(animDir=0) {
 }
 
 function heroNav(dir) {
+  if (!heroWords.length) return;
   let next = heroIndex + dir;
   if (next < 0) next = heroWords.length - 1;
   if (next >= heroWords.length) next = 0;
@@ -1194,6 +2013,7 @@ function heroNav(dir) {
 function pronounceHero() {
   const w = heroWords[heroIndex];
   if (w) pronounce(w.word);
+  else pronounceSearchInput();
 }
 
 function toggleSaveHero() {
@@ -1222,23 +2042,25 @@ function renderCategoryNav() {
 function selectCategory(cat) {
   activeCategory = cat;
   wordListPage = 1;
-  heroWords = getFilteredWords().length > 0 ? getFilteredWords() : words;
   heroIndex = 0;
-  updateHeroCard(0);
-  renderCategoryNav();
-  renderWordList();
+  renderBrowse();
 }
 
 function renderWordList() {
   const filtered = getFilteredWords();
-  const totalPages = Math.ceil(filtered.length / WORDS_PER_PAGE);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / WORDS_PER_PAGE));
   if (wordListPage > totalPages) wordListPage = 1;
   const start = (wordListPage - 1) * WORDS_PER_PAGE;
   const pageWords = filtered.slice(start, start + WORDS_PER_PAGE);
 
-  document.getElementById("wordListTitle").textContent = activeCategory==="All Words" ? "All Words" : activeCategory;
+  document.getElementById("wordListTitle").textContent = activeCategory === "All Words" ? "All Words" : activeCategory;
   document.getElementById("wordListCount").textContent = "(" + filtered.length + ")";
   const container = document.getElementById("wordList");
+
+  if (filtered.length === 0) {
+    container.innerHTML = "";
+    return;
+  }
 
   // Word cards — tap card body to expand example, save & speak buttons independent
   const cardsHtml = pageWords.map((w, i) => {
@@ -1349,7 +2171,7 @@ function toggleWordListSave(event, id) {
 
 function goToPage(page) {
   const filtered = getFilteredWords();
-  const totalPages = Math.ceil(filtered.length / WORDS_PER_PAGE);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / WORDS_PER_PAGE));
   if (page < 1 || page > totalPages) return;
   wordListPage = page;
   renderWordList();
@@ -1699,6 +2521,7 @@ window.addEventListener("resize", () => {
 //  INIT
 // ==========================================
 document.getElementById("footerYear").textContent = "© " + new Date().getFullYear() + " PTEC English Language Club";
+applyTheme(loadTheme());
 updateSavedLabel();
 setMode("browse");
 </script>
